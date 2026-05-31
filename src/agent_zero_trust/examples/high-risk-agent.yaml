@@ -1,0 +1,65 @@
+project:
+  name: high-risk-agent
+agent:
+  name: high-risk-agent
+  environment: production
+  autonomy_level: high
+  handles_customer_data: true
+  handles_untrusted_input: true
+  internet_access: true
+  multi_agent_workflow: true
+tools:
+  uses_tools: true
+  uses_mcp: true
+  can_read_database: true
+  can_write_database: true
+  can_send_email: true
+  can_execute_code: true
+  can_call_external_apis: true
+  high_risk_tools_require_approval: false
+  tools_allowlist_exists: false
+  mcp_servers_reviewed: false
+identity:
+  unique_identity: false
+  cryptographic_identity: false
+  shared_service_account: true
+authentication:
+  static_api_keys: true
+  short_lived_tokens: false
+  token_lifetime_minutes: 10080
+  credential_revocation_exists: false
+authorization:
+  deny_by_default: false
+  least_privilege_reviewed: false
+logging:
+  logs_tool_calls: false
+  logs_data_access: false
+traceability:
+  request_ids: false
+  trace_user_request_to_agent_action: false
+memory:
+  uses_memory: true
+  memory_isolated: false
+  sensitive_data_allowed: true
+  expiration_exists: false
+rag:
+  uses_rag: true
+  untrusted_sources: true
+  document_uploads: true
+  ingestion_validation: false
+sandboxing:
+  sandbox_for_untrusted_input: false
+input_output_controls:
+  egress_controls: false
+  prompt_injection_filtering: false
+  output_filtering_customer_data: false
+recovery:
+  rollback_plan_exists: false
+  kill_switch_exists: false
+governance:
+  risk_assessment_done: false
+  incident_response_plan_exists: false
+  human_owner_defined: false
+supply_chain:
+  ai_bom_exists: false
+  model_source_verified: false

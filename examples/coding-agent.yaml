@@ -1,0 +1,19 @@
+project:
+  name: coding-agent
+agent:
+  name: coding-agent
+  environment: staging
+  autonomy_level: high
+  handles_untrusted_input: true
+  internet_access: true
+tools:
+  uses_tools: true
+  can_execute_code: true
+  can_call_external_apis: true
+  high_risk_tools_require_approval: true
+sandboxing:
+  sandboxing_enabled: true
+  sandbox_for_untrusted_input: true
+input_output_controls:
+  egress_controls: true
+  prompt_injection_filtering: true

@@ -1,0 +1,65 @@
+# AI Agent Zero Trust Readiness Report
+
+## Executive Summary
+
+- Agent name: {{ result.agent_name }}
+- Environment: {{ result.environment }}
+- Overall score: {{ result.score }}/100
+- Readiness level: {{ result.readiness_level }}
+- Blast radius: {{ result.blast_radius }}
+- Critical findings: {{ result.summary.Critical }}
+- High findings: {{ result.summary.High }}
+
+## Top Risks
+
+{% if result.findings -%}
+{% for finding in result.findings[:5] %}
+- [{{ finding.severity }}] {{ finding.title }}
+{% endfor %}
+{% else -%}
+- No failed rules found.
+{% endif %}
+
+## Score Breakdown
+
+| Category | Score | Weight |
+| --- | ---: | ---: |
+{% for category, score in result.category_scores.items() -%}
+| {{ category }} | {{ score }} | {{ weights[category] }} |
+{% endfor %}
+
+## Findings
+
+{% if result.findings -%}
+{% for finding in result.findings %}
+### {{ finding.id }}: {{ finding.title }}
+
+- Severity: {{ finding.severity }}
+- Category: {{ finding.category }}
+- Description: {{ finding.description }}
+- Evidence from config: `{{ finding.evidence }}`
+- Recommendation: {{ finding.recommendation }}
+
+{% endfor %}
+{% else -%}
+No findings were generated.
+{% endif %}
+
+## Blast Radius Analysis
+
+The calculated blast radius is **{{ result.blast_radius }}** based on the declared environment,
+data access, tool access, external communication paths, autonomy, and approval controls.
+
+## Recommended 30-Day Remediation Plan
+
+{% if result.findings -%}
+{% for finding in result.findings[:5] %}
+- {{ finding.recommendation }}
+{% endfor %}
+{% else -%}
+- Continue periodic reviews, especially before production changes.
+{% endif %}
+
+## Disclaimer
+
+{{ disclaimer }}

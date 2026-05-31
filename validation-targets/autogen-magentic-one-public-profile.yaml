@@ -1,0 +1,34 @@
+project:
+  name: autogen-magentic-one-public-profile
+agent:
+  name: AutoGen Magentic-One style agent team
+  environment: development
+  autonomy_level: high
+  handles_customer_data: false
+  handles_untrusted_input: true
+  internet_access: true
+  multi_agent_workflow: true
+tools:
+  uses_tools: true
+  can_execute_code: true
+  can_call_external_apis: true
+  high_risk_tools_require_approval: true
+  tools_allowlist_exists: true
+identity:
+  unique_identity: true
+authentication:
+  static_api_keys: false
+logging:
+  logs_tool_calls: true
+traceability:
+  request_ids: true
+sandboxing:
+  sandbox_for_untrusted_input: true
+input_output_controls:
+  egress_controls: true
+  prompt_injection_filtering: true
+governance:
+  risk_assessment_done: false
+supply_chain:
+  ai_bom_exists: false
+  model_source_verified: true

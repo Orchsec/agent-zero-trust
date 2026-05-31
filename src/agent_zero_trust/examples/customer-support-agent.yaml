@@ -1,0 +1,25 @@
+project:
+  name: customer-support-agent
+agent:
+  name: customer-support-agent
+  environment: production
+  autonomy_level: medium
+  handles_customer_data: true
+  handles_untrusted_input: true
+  internet_access: true
+tools:
+  uses_tools: true
+  can_read_database: true
+  can_call_external_apis: true
+  high_risk_tools_require_approval: true
+identity:
+  unique_identity: true
+  cryptographic_identity: true
+authentication:
+  short_lived_tokens: true
+logging:
+  logs_tool_calls: true
+  logs_data_access: true
+traceability:
+  request_ids: true
+  trace_user_request_to_agent_action: true

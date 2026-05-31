@@ -1,0 +1,16 @@
+project:
+  name: basic-chatbot
+agent:
+  name: basic-chatbot
+  environment: development
+  autonomy_level: low
+  handles_customer_data: false
+  handles_untrusted_input: true
+  internet_access: false
+  multi_agent_workflow: false
+tools:
+  uses_tools: false
+sandboxing:
+  sandbox_for_untrusted_input: true
+input_output_controls:
+  prompt_injection_filtering: true

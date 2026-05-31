@@ -1,0 +1,36 @@
+project:
+  name: autogpt-public-profile
+agent:
+  name: AutoGPT autonomous local agent
+  environment: development
+  autonomy_level: high
+  handles_customer_data: false
+  handles_untrusted_input: true
+  internet_access: true
+  multi_agent_workflow: false
+tools:
+  uses_tools: true
+  can_execute_code: false
+  can_call_external_apis: true
+  high_risk_tools_require_approval: false
+  tools_allowlist_exists: false
+identity:
+  unique_identity: false
+authentication:
+  static_api_keys: true
+memory:
+  uses_memory: true
+  memory_isolated: false
+  sensitive_data_allowed: false
+sandboxing:
+  sandbox_for_untrusted_input: false
+input_output_controls:
+  egress_controls: false
+  prompt_injection_filtering: false
+recovery:
+  rollback_plan_exists: false
+governance:
+  risk_assessment_done: false
+  human_owner_defined: true
+supply_chain:
+  ai_bom_exists: false

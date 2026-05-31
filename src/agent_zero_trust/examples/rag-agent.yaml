@@ -1,0 +1,18 @@
+project:
+  name: rag-agent
+agent:
+  name: rag-agent
+  environment: production
+  autonomy_level: medium
+  handles_customer_data: true
+  handles_untrusted_input: true
+rag:
+  uses_rag: true
+  untrusted_sources: true
+  document_uploads: true
+  ingestion_validation: false
+memory:
+  uses_memory: true
+  memory_isolated: true
+  sensitive_data_allowed: true
+  expiration_exists: true

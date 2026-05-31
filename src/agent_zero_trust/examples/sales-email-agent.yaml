@@ -1,0 +1,37 @@
+project:
+  name: sales-email-agent
+agent:
+  name: sales-email-agent
+  environment: production
+  autonomy_level: high
+  handles_customer_data: true
+  handles_untrusted_input: true
+  internet_access: true
+tools:
+  uses_tools: true
+  can_read_database: true
+  can_send_email: true
+  can_call_external_apis: true
+  high_risk_tools_require_approval: false
+  tools_allowlist_exists: false
+identity:
+  unique_identity: false
+  shared_service_account: true
+authentication:
+  static_api_keys: true
+  short_lived_tokens: false
+  token_lifetime_minutes: 1440
+  credential_revocation_exists: false
+traceability:
+  request_ids: false
+  trace_user_request_to_agent_action: false
+input_output_controls:
+  egress_controls: false
+  output_filtering_customer_data: false
+recovery:
+  rollback_plan_exists: false
+  kill_switch_exists: false
+governance:
+  risk_assessment_done: false
+  incident_response_plan_exists: false
+  human_owner_defined: false

@@ -1,0 +1,13 @@
+project:
+  name: mcp-agent
+agent:
+  name: mcp-agent
+  environment: staging
+  autonomy_level: medium
+  internet_access: true
+tools:
+  uses_tools: true
+  uses_mcp: true
+  mcp_servers_reviewed: false
+  can_call_external_apis: true
+  high_risk_tools_require_approval: true

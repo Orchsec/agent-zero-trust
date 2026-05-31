@@ -1,0 +1,37 @@
+project:
+  name: crewai-public-profile
+agent:
+  name: CrewAI multi-agent workflow
+  environment: development
+  autonomy_level: medium
+  handles_customer_data: false
+  handles_untrusted_input: true
+  internet_access: true
+  multi_agent_workflow: true
+tools:
+  uses_tools: true
+  can_call_external_apis: true
+  high_risk_tools_require_approval: true
+  tools_allowlist_exists: true
+identity:
+  unique_identity: true
+authentication:
+  static_api_keys: false
+memory:
+  uses_memory: true
+  memory_isolated: true
+rag:
+  uses_rag: true
+  untrusted_sources: true
+  document_uploads: false
+logging:
+  logs_tool_calls: true
+traceability:
+  request_ids: true
+input_output_controls:
+  egress_controls: true
+  prompt_injection_filtering: true
+governance:
+  risk_assessment_done: false
+supply_chain:
+  ai_bom_exists: false

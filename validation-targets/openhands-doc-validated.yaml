@@ -1,0 +1,68 @@
+project:
+  name: openhands-doc-validated
+  owner: OpenHands
+agent:
+  name: OpenHands self-hosted coding agent
+  environment: development
+  autonomy_level: high
+  handles_customer_data: false
+  handles_untrusted_input: true
+  internet_access: true
+  multi_agent_workflow: false
+tools:
+  uses_tools: true
+  uses_mcp: false
+  can_read_database: false
+  can_write_database: false
+  can_send_email: false
+  can_execute_code: true
+  can_call_external_apis: true
+  high_risk_tools_require_approval: true
+  tools_allowlist_exists: true
+  mcp_servers_reviewed: true
+identity:
+  unique_identity: true
+  cryptographic_identity: false
+  shared_service_account: false
+authentication:
+  static_api_keys: false
+  short_lived_tokens: true
+  token_lifetime_minutes: 60
+  credential_revocation_exists: true
+authorization:
+  deny_by_default: true
+  least_privilege_reviewed: true
+logging:
+  logs_tool_calls: true
+  logs_data_access: true
+  immutable_logs: false
+traceability:
+  request_ids: true
+  trace_user_request_to_agent_action: true
+memory:
+  uses_memory: false
+  memory_isolated: true
+  sensitive_data_allowed: false
+  expiration_exists: true
+rag:
+  uses_rag: false
+  untrusted_sources: false
+  document_uploads: false
+  ingestion_validation: true
+sandboxing:
+  sandboxing_enabled: true
+  sandbox_for_untrusted_input: true
+input_output_controls:
+  egress_controls: false
+  prompt_injection_filtering: true
+  output_filtering_customer_data: true
+recovery:
+  rollback_plan_exists: true
+  kill_switch_exists: true
+governance:
+  risk_assessment_done: false
+  incident_response_plan_exists: true
+  human_owner_defined: true
+supply_chain:
+  ai_bom_exists: false
+  model_source_verified: true

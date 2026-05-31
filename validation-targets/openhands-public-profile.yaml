@@ -1,0 +1,44 @@
+project:
+  name: openhands-public-profile
+agent:
+  name: OpenHands local coding agent
+  environment: development
+  autonomy_level: high
+  handles_customer_data: false
+  handles_untrusted_input: true
+  internet_access: true
+  multi_agent_workflow: false
+tools:
+  uses_tools: true
+  can_read_database: false
+  can_write_database: false
+  can_send_email: false
+  can_execute_code: true
+  can_call_external_apis: true
+  high_risk_tools_require_approval: true
+  tools_allowlist_exists: true
+identity:
+  unique_identity: true
+authentication:
+  static_api_keys: false
+  short_lived_tokens: true
+authorization:
+  deny_by_default: true
+  least_privilege_reviewed: true
+logging:
+  logs_tool_calls: true
+traceability:
+  request_ids: true
+sandboxing:
+  sandbox_for_untrusted_input: true
+input_output_controls:
+  egress_controls: true
+  prompt_injection_filtering: true
+recovery:
+  rollback_plan_exists: true
+governance:
+  risk_assessment_done: true
+  human_owner_defined: true
+supply_chain:
+  ai_bom_exists: false
+  model_source_verified: true

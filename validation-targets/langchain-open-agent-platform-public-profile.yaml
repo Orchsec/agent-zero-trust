@@ -1,0 +1,39 @@
+project:
+  name: langchain-open-agent-platform-public-profile
+agent:
+  name: LangChain Open Agent Platform configured agent
+  environment: staging
+  autonomy_level: medium
+  handles_customer_data: true
+  handles_untrusted_input: true
+  internet_access: true
+  multi_agent_workflow: true
+tools:
+  uses_tools: true
+  uses_mcp: true
+  can_call_external_apis: true
+  high_risk_tools_require_approval: false
+  tools_allowlist_exists: false
+  mcp_servers_reviewed: false
+identity:
+  unique_identity: true
+authentication:
+  static_api_keys: false
+authorization:
+  deny_by_default: true
+logging:
+  logs_tool_calls: true
+traceability:
+  request_ids: true
+rag:
+  uses_rag: true
+  untrusted_sources: true
+  document_uploads: true
+  ingestion_validation: false
+input_output_controls:
+  egress_controls: false
+  output_filtering_customer_data: false
+governance:
+  risk_assessment_done: false
+supply_chain:
+  ai_bom_exists: false
