@@ -50,6 +50,43 @@ agent-zero-trust scan examples/sales-email-agent.yaml --format json --output rep
 - Sandboxing and egress controls
 - Recovery, governance, and supply-chain readiness
 
+## Example Output
+
+```text
+Agent Zero Trust Readiness Assessment
+
+Agent: sales-email-agent
+Environment: production
+
+Overall Score: 37/100
+Readiness Level: Critical risk
+Blast Radius: Critical
+
+      Findings
++------------------+
+| Severity | Count |
+|----------+-------|
+| Critical |     1 |
+| High     |    13 |
+| Medium   |     4 |
+| Low      |     0 |
++------------------+
+
+Top Risks:
+  [CRITICAL] Agent can read database and send email
+  [HIGH] Static API keys used
+  [HIGH] No credential revocation
+  [HIGH] No incident response plan
+  [HIGH] No human owner
+
+Recommended Next Steps:
+  1. Add approval gates, output filtering, and scoped tool permissions.
+  2. Use short-lived scoped tokens or workload identity.
+  3. Add a tested credential revocation path.
+  4. Create an incident response process for agent-specific failure modes.
+  5. Assign a human owner accountable for the agent.
+```
+
 ## Example Config
 
 ```yaml
