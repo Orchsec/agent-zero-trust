@@ -9,8 +9,8 @@
 
 ## v0.2
 
+- Browser-based questionnaire
+- FastAPI scan endpoint
+- React + Vite frontend
+- Markdown, JSON, and generated YAML export
 - Evidence and confidence fields for real-world validation
-- Unknown/unverified assessment state
-- Report diffing for remediation tracking
-- SARIF export for security tooling
-- GitHub Action for CI policy gates

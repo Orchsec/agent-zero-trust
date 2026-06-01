@@ -8,3 +8,7 @@ build/
 *.egg-info/
 report.md
 report.json
+web/frontend/node_modules/
+web/frontend/dist/
+web/frontend/vite.log
+web/frontend/*.tsbuildinfo

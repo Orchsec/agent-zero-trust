@@ -130,6 +130,21 @@ python -m pytest
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) and [docs/release-checklist.md](docs/release-checklist.md).
 
+## Version 2 Web App
+
+The v2 branch includes an experimental local web app for browser-based assessments.
+
+```bash
+python -m pip install -e ".[web,dev]"
+python -m uvicorn web.backend.app:app --reload --host 127.0.0.1 --port 8000
+
+cd web/frontend
+npm install
+npm run dev
+```
+
+Open `http://127.0.0.1:5173`.
+
 ## Disclaimer
 
 This tool is a self-assessment aid, not a formal audit, certification, or penetration test.
